@@ -11,18 +11,18 @@ public class Model {
     public Model() {
     }
 
-    public void callTruckMethod(){
+    public void callTruckMethod() {
         Truck truck = new Truck("Volvo", 8, 500, 10);
         Class<?> classTruck = truck.getClass();
 
         Method[] methods = classTruck.getDeclaredMethods();
 
-        for (Method m: methods) {
-            if(m.isAnnotationPresent(MyAnnotation.class)){
+        for (Method m : methods) {
+            if (m.isAnnotationPresent(MyAnnotation.class)) {
                 m.setAccessible(true);
                 try {
                     m.invoke(truck);
-                } catch (InvocationTargetException | IllegalAccessException e){
+                } catch (InvocationTargetException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }

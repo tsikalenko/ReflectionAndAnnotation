@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 @Getter
 @Setter
-public class Truck extends Car implements ITruck{
+public class Truck extends Car implements ITruck {
     private double loadCapacity;
     private double freeSpace;
 
@@ -26,10 +26,10 @@ public class Truck extends Car implements ITruck{
 
     @Override
     @MyAnnotation
-    public void loading(){
+    public void loading() {
         double load = inputLoadSize();
-        if(load > loadCapacity){
-            if(freeSpace == 0){
+        if (load > loadCapacity) {
+            if (freeSpace == 0) {
                 View.showMesege(Util.TRUCK_IS_FULL);
             }
             View.showMesege(Util.SIZE_LOAD_IS_LARGE);
@@ -51,17 +51,17 @@ public class Truck extends Car implements ITruck{
 
     @Override
     @MyAnnotation
-    public void unloading(){
+    public void unloading() {
         freeSpace = loadCapacity;
         View.showMesege(Util.TRUCK_IS_FREE);
     }
 
-    private double inputLoadSize(){
+    private double inputLoadSize() {
         Scanner sc = new Scanner(System.in);
         View.showMesege(Util.MAX_LOAD);
         View.showDouble(loadCapacity);
         View.showMesege(Util.INPUT_LOAD_SIZE);
-        while (!sc.hasNextDouble()){
+        while (!sc.hasNextDouble()) {
             View.showMesege(Util.INCORRECT_INPUT);
             sc.next();
         }

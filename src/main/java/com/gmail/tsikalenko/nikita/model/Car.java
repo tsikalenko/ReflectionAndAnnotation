@@ -22,7 +22,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return  "model='" + model + '\'' +
+        return "model='" + model + '\'' +
                 ", numberCilindrs=" + numberCilindrs +
                 ", horsePowers=" + horsePowers;
     }
