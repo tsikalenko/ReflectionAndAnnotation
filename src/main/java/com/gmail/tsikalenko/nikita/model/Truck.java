@@ -12,6 +12,7 @@ import java.util.Scanner;
 @Setter
 public class Truck extends Car implements ITruck {
     private double loadCapacity;
+    @MyAnnotation
     private double freeSpace;
 
     public Truck() {
